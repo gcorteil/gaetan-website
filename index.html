@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaëtan Corteil | Expert Pharma & Biotech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --primary: #2b6cb0;
+      --secondary: #f7fafc;
+      --accent: #68d391;
+      --dark: #1a202c;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: var(--secondary);
+      color: var(--dark);
+      scroll-behavior: smooth;
+    }
+    header, footer {
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .logo {
+      width: 60px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    .language-toggle, .menu-toggle {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: #1a202c;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .cta:hover {
+      background-color: #48bb78;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2c5282;
+    }
+    .recommendation {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .timeline {
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      margin-top: 2rem;
+    }
+    .timeline-entry {
+      margin-bottom: 2rem;
+    }
+    .timeline-entry h3 {
+      margin-bottom: 0.5rem;
+    }
+    .banner {
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .burger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary);
+        position: absolute;
+        width: 100%;
+        top: 80px;
+        left: 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .burger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo gaetan.png" alt="Bannière Gaëtan Corteil" class="banner">
+    <img src="https://img.icons8.com/external-flat-juicy-fish/60/ffffff/external-pharmaceutical-laboratory-flat-flat-juicy-fish.png" class="logo" alt="Logo Pharma">
+    <h1>Gaëtan Corteil</h1>
+    <p>Expert Freelance en Sciences Pharmaceutiques & Industrialisation</p>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+      <a href="#home">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Expérience</a>
+      <a href="#recommendations">Recommandations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="language-toggle">
+      <button onclick="toggleLanguage()">FR / EN</button>
+    </div>
+  </header>
+
+  <!-- Home section -->
+  <section id="home" class="section">
+    <h2>Bienvenue</h2>
+    <p>Gaëtan Corteil, expert freelance en sciences pharmaceutiques et industrialisation, avec plus de 12 ans d’expérience dans le domaine.</p>
+    <a href="#contact" class="cta">Discutons de votre projet</a>
+  </section>
+
+  <!-- Services section -->
+  <section id="services" class="section">
+    <h2>Services proposés</h2>
+    <ul>
+      <li>Transfert de technologies (bioprocédés, scale-up/down)</li>
+      <li>Industrialisation de procédés en environnement GMP</li>
+      <li>Validation et qualification (nettoyage, équipements, process)</li>
+      <li>Supervision laboratoire / QC</li>
+      <li>Amélioration continue et gestion de projet Lean</li>
+    </ul>
+  </section>
+
+  <!-- Experience section -->
+  <section id="experience" class="section">
+    <h2>Expérience</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h3>UCB Pharma (2024 – Aujourd’hui)</h3>
+        <p><strong>Clinical Manufacturing System Engineer</strong> – Gestion des systèmes de production clinique et transfert de technologies à grande échelle (jusqu’à 15 000 L).</p>
+        <p><strong>Projets clés :</strong> Mise en place de procédés de production innovants, réduction des coûts et du temps de cycle grâce à des optimisations de processus. Analyse des risques et mise en place d’améliorations continues pour optimiser les performances.</p>
+        <p><strong>Challenges :</strong> Travailler dans un environnement très dynamique et en évolution rapide, et gérer les attentes des parties prenantes internes et externes.</p>
+      </div>
+      <div class="timeline-entry">
+        <h3>Plasma Industries (2015 – 2017)</h3>
+        <p><strong>Superviseur QC</strong> – Gestion de l'équipe en 4 shifts et supervision de la production de produits plasma.</p>
+        <p><strong>Réalisations :</strong> Mise en place de nouvelles stratégies de validation pour améliorer la qualité des produits plasma. Réduction du backlog de tests, et réorganisation des activités du laboratoire pour maximiser la productivité.</p>
+        <p><strong>Problématiques :</strong> Gérer les délais serrés et optimiser la capacité du laboratoire tout en maintenant une conformité rigoureuse aux normes de qualité.</p>
+      </div>
+      <div class="timeline-entry">
+        <h3>Baxter International (2013 – 2015)</h3>
+        <p><strong>Qualification des matériaux</strong> – Mise en place des études d'extractibles/lixiviables et des protocoles de qualification des matériaux en environnement GMP.</p>
+        <p><strong>Projets majeurs :</strong> Mise en place de processus de qualification pour garantir la conformité aux normes pharmaceutiques internationales. Suivi rigoureux de la documentation réglementaire et collaboration avec les parties prenantes internes et externes pour garantir la conformité.</p>
+        <p><strong>Objectifs :</strong> Améliorer la gestion des risques et assurer une qualité maximale pour les produits de santé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations section -->
+  <section id="recommendations" class="section">
+    <h2>Recommandations</h2>
+    <div class="recommendation">
+      "Gaëtan est une personne très professionnelle et collaborative. Il trouve toujours une solution aux problèmes complexes. Un atout précieux pour toute équipe."
+      <br />– Ancien collègue chez UCB
+    </div>
+    <div class="recommendation">
+      "Sa capacité à fédérer les énergies autour d’un objectif commun est impressionnante. Travailler avec Gaëtan est un vrai plaisir."
+      <br />– Responsable projet chez Plasma Industries
+    </div>
+    <div class="recommendation">
+      "Gaëtan a une compréhension technique impressionnante. Il est capable de diriger des projets complexes et de faire avancer les équipes de manière efficace."
+      <br />– Directeur chez Baxter International
+    </div>
+    <div class="recommendation">
+      "Un expert reconnu dans son domaine, capable de transformer des défis techniques en solutions pragmatiques, toujours orienté résultats."
+      <br />– Consultant Senior chez Nalys
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Intéressé par une collaboration ? Envoyez-moi un message !</p>
+    <form action="mailto:gcorteil@hotmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <input type="text" name="subject" placeholder="Sujet" required>
+      <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer le message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Gaëtan Corteil | <a href="https://www.linkedin.com/in/gaetan-corteil-18506b26" target="_blank" style="color: var(--accent);">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.section', { delay: 200, distance: '50px', origin: 'bottom', duration: 800 });
+    function toggleLanguage() {
+      const elements = document.querySelectorAll('[data-fr]');
+      const currentLang = document.documentElement.lang;
+      const newLang = currentLang === 'fr' ? 'en' : 'fr';
+      document.documentElement.lang = newLang;
+      elements.forEach(el => { el.innerHTML = el.getAttribute(`data-${newLang}`); });
+    }
+    function toggleMenu() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
