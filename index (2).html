@@ -276,19 +276,30 @@
     <p data-fr="© 2025 Gaëtan Corteil | <a href='https://www.linkedin.com/in/gaetan-corteil-18506b26' target='_blank' style='color: var(--accent);'>LinkedIn</a>" data-en="© 2025 Gaëtan Corteil | <a href='https://www.linkedin.com/in/gaetan-corteil-18506b26' target='_blank' style='color: var(--accent);'>LinkedIn</a>"></p>
   </footer>
 
-  <script>
-    ScrollReveal().reveal('.section', { delay: 200, distance: '50px', origin: 'bottom', duration: 800 });
-    function toggleLanguage() {
-      const elements = document.querySelectorAll('[data-fr]');
-      const currentLang = document.documentElement.lang;
-      const newLang = currentLang === 'fr' ? 'en' : 'fr';
-      document.documentElement.lang = newLang;
-      elements.forEach(el => { el.innerHTML = el.getAttribute(`data-${newLang}`); });
-    }
-    function toggleMenu() {
-      const nav = document.getElementById('nav');
-      nav.classList.toggle('active');
-    }
-  </script>
+<script>
+  ScrollReveal().reveal('.section', { delay: 200, distance: '50px', origin: 'bottom', duration: 800 });
+
+  // Fonction pour changer la langue
+  function toggleLanguage() {
+    const elements = document.querySelectorAll('[data-fr]');  // Cibler les éléments avec data-fr et data-en
+    const currentLang = document.documentElement.lang;
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';  // Bascule entre 'fr' et 'en'
+
+    // Changer l'attribut 'lang' de l'élément HTML
+    document.documentElement.lang = newLang;
+
+    // Mettre à jour les contenus en fonction de la langue choisie
+    elements.forEach(el => {
+      el.innerHTML = el.getAttribute(`data-${newLang}`);  // Change le contenu avec la traduction appropriée
+    });
+  }
+
+  // Fonction pour basculer le menu mobile
+  function toggleMenu() {
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('active');
+  }
+</script>
 </body>
 </html>
+
